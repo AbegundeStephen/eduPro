@@ -6,8 +6,11 @@ import { slug } from "github-slugger";
 import Image from "next/image";
 import RenderContent from "@/src/components/Blog/RenderContent";
 
+console.log(allBlogs)
+
 export async function generateStaticParams() {
     return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
+  
   }
   
   export async function generateMetadata({ params }) {
@@ -26,7 +29,7 @@ export async function generateStaticParams() {
           ? [siteMetadata.siteUrl + blog.image.filePath.replace("../public", "")]
           : blog.image;
     }
-    const ogImages = imageList.map((img) => {
+    const blogImages = imageList.map((img) => {
       return { url: img.includes("http") ? img : siteMetadata.siteUrl + img };
     });
   
@@ -44,14 +47,14 @@ export async function generateStaticParams() {
         type: "article",
         publishedTime: publishedAt,
         modifiedTime: modifiedAt,
-        images: ogImages,
+        images: blogImages,
         authors: authors.length > 0 ? authors : [siteMetadata.author],
       },
       twitter: {
         card: "summary_large_image",
         title: blog.title,
         description: blog.description,
-        images: ogImages,
+        images: blogImages,
       },
     };
   }

@@ -1,10 +1,10 @@
 // Please update required information
 
 const siteMetadata = {
-    title: 'eduPro Blog With Tailwind CSS and Contentlayer',
+    title: 'info-hub',
     author: 'Abegunde Timilehin',
-    headerTitle: 'eduPro Blog',
-    description: 'An educative blog created with Next.js, Tailwind.css and contentlayer.',
+    headerTitle: 'Info-Hub',
+    description: 'An informative blog created with Next.js, Tailwind.css and contentlayer.',
     language: 'en-us',
     theme: 'system', // system, dark or light
     siteUrl: 'https://create-blog-with-nextjs.vercel.app', // your website URL
